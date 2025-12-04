@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/all.min.css">
+     <link rel="stylesheet" href="css/style.css">
+     <!-- إضافة FontAwesome من CDN -->
+     {{!--
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> --}}
+     <title>Weather App</title>
+</head>
+
+<body>
+     <main>
+          <form id="weather_form" action="service.html" method="get">
+               <h1><i class="fas fa-cloud-sun"></i> weather app </h1>
+               <input type="text" placeholder="Enter country name" value="" name="country_name" id="country_name"
+                    required>
+               <input type="submit" value="get weather" id="btn_get_weather">
+<div class="info_data_div">
+     
+                    <div class="info_data">
+                        <i class="fas fa-location-dot"></i>
+                            <p>country: <span id="location"></span></p>
+                    </div>
+               
+                     <div class="info_data">
+                        <i class="fas fa-globe-americas"></i> 
+                            <p>latitude: <span id="latitude"></span></p>
+                    </div>
+                     <div class="info_data">
+                       <i class="fas fa-globe-americas"></i> 
+                            <p>longitude: <span id="longitude"></span></p>
+                    </div>
+                     <div class="info_data">
+                         <i class="fas fa-temperature-high"></i> 
+                            <p>Temperature: <span id="Temperature_C"></span><span id="weather_condition"></span></p>
+                    </div>
+</div>
+
+
+                 <div class="info_error" >
+                   <i class="fas fa-exclamation-circle"></i>
+                       <p><span id="error"></span></p>
+               </div>
+
+          </form>
+          <form id="weather_form1">
+               <h1><i class="fas fa-cloud-sun"></i> weather app </h1>
+               <div>
+                    <input type="text" placeholder="Enter country name" value="" name="country_name" id="country_name_f"
+                         readonly>
+                    <button class="btn_loading" disabled><i class="fa-solid fa-spinner"></i></button>
+               </div>
+          </form>
+     </main>
+     <script src="js/script.js"></script>
+</body>
+
+</html>
