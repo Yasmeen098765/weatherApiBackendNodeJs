@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main {
+    position: relative;
+    min-height: 100vh;
+    background: lightblue url(../Images/weather-uber.jpg) center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0;
+}
+
+main form {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.26);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 40px 50px;
+    border-radius: 25px;
+}
+
+main form h1 {
+    font-size: 45px;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+main form div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+main form input[ type="text"] {
+    width: 80%;
+    padding: 13px 12px;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(122, 121, 121);
+    outline: none;
+    border: none;
+    transition: 0.5s all ease-in-out;
+}
+
+main form input[ type="text"]:focus {
+    box-shadow: 0px 0px 10px 2px rgb(27, 154, 183);
+    color: rgba(0, 0, 0, 0.744)
+}
+
+main form input[type="submit"],
+main form .btn_loading {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-transform: capitalize;
+    padding: 13px 25px;
+    border: none;
+    font-size: 18px;
+    background: linear-gradient(to right, rgb(43, 156, 181)50%, rgb(1, 98, 120) 100%);
+    color: white;
+    border-radius: 15px;
+    transition: 0.5s all ease-in-out;
+    transform: scale(1);
+    box-shadow: 0px 0px 10px 1px rgb(4, 70, 84);
+    cursor: pointer;
+}
+
+
+.fa-spinner {
+    transform: rotate(0deg);
+    animation: loading1 1s linear 0s infinite backwards;
+}
+
+@keyframes loading1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+#weather_form1 {
+    display: none;
+}
+
+main form input[type="submit"]:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, rgb(91, 101, 213)50%, rgb(22, 36, 189) 100%);
+    box-shadow: 0px 0px 8px 0.15px rgb(198, 202, 203);
+}
+
+.info_data_div {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    display: none;
+}
+
+main form .info_error,
+main form .info_data {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: rgba(160, 159, 159, 0.459);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    box-shadow: 0px 0px 8px 0.15px rgb(34, 35, 36);
+    color: rgb(231, 228, 228);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+main form .info_error {
+    display: none;
+}
+
+main form .info_error:hover,
+main form .info_data:hover {
+    transform: scale(1.04);
+    background-color: rgba(188, 185, 185, 0.459);
+    box-shadow: 0px 0px 10px 0.5px rgb(34, 35, 36);
+}
+
+main form .info_error i,
+main form .info_data i {
+    color: rgb(27, 154, 183);
+    font-size: 25px;
+}
+
+main form .info_error p,
+main form .info_data p {
+    text-transform: capitalize;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+main form .info_error span,
+main form .info_data span {
+    font-weight: 600;
+    text-transform: none;
+}
+
+@media(max-width:992px) {
+    main form {
+        width: 70%;
+        gap: 15px;
+    }
+
+    main form input[ type="text"] {
+        font-size: 19px;
+    }
+
+    main form input[type="submit"],
+    main form .btn_loading {
+        padding: 18px 25px;
+        font-size: 20px;
+    }
+
+    .info_data_div {
+        gap: 17px;
+    }
+
+    main form .info_error,
+    main form .info_data {
+        padding: 20px 20px;
+        font-size: 20px;
+    }
+}
+
+@media(max-width:576px) {
+    main form {
+        width: 90%;
+    }
+
+    main form h1 {
+        font-size: 35px;
+    }
+}
